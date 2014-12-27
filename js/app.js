@@ -49,7 +49,10 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
       }
       i++;
     });
-    $timeout($scope.next, (endTimeSeconds - startTimeSeconds) * 1000);
+    if($scope.tiktok) {
+      $timeout.cancel($scope.tiktok);
+    }
+    $scope.tiktok = $timeout($scope.next, (endTimeSeconds - startTimeSeconds) * 1000);
   };
     
   ref.once("value", function(snapshot) { // Sonst laedt er jedes mal neu, wenn es einen neuen Eintrag in Firebase gibt
