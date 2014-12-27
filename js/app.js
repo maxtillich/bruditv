@@ -11,18 +11,18 @@ app.controller("BrudiAdminCtrl", function($scope, $firebase) {
   }
 });
 
-app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce) {
+app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
   var ref = new Firebase("https://bruditv.firebaseio.com/videos");
   var sync = $firebase(ref);
 
   $scope.next = function() {
     var oldrand = rand || -1;
-    var rand = Math.floor(Math.random() * snapshot.numChildren());
+    var rand = Math.floor(Math.random() * $scope.snapshot.numChildren());
     while(rand == oldrand) { // Damit wir nicht das letzte nochmal haben
-      rand = Math.floor(Math.random() * snapshot.numChildren());
+      rand = Math.floor(Math.random() * $scope.snapshot.numChildren());
     }
     var i = 0;
-    snapshot.forEach(function(snapshot) {
+    $scope.snapshot.forEach(function(snapshot) {
       if (i == rand) {
         randomVideo = snapshot.val();
         console.log(randomVideo);
@@ -49,9 +49,11 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce) {
       }
       i++;
     });
-  }
+    $timeout($scope.next, (endTimeSeconds - startTimeSeconds) * 1000);
+  };
     
   ref.once("value", function(snapshot) { // Sonst laedt er jedes mal neu, wenn es einen neuen Eintrag in Firebase gibt
+      $scope.snapshot = snapshot;
       $scope.next();
   }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
