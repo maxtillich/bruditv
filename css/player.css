@@ -29,7 +29,7 @@ a {
   height: 0;
   background: #fff;
   box-shadow: 0 1px rgba(0, 0, 0, 0.02);
-  padding: 0 2%;
+  padding: 0;
   font-size: 13px;
   transition-property: all;
   transition-duration: .5s;
@@ -68,7 +68,7 @@ a {
   height: 0;
   background: #fff;
   box-shadow: 0 -1px rgba(0, 0, 0, 0.02);
-  padding: 0 2%;
+  padding: 0;
   font-size: 13px;
   transition-property: all;
   transition-duration: .5s;
@@ -85,12 +85,13 @@ a {
     width: 130px;
     font-size: 21px;
     opacity: 0;
+    padding-left: 18px;
     line-height: 50px; }
   .subbar .trackinfo {
     width: calc(100% - 260px);
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
     text-align: center;
     opacity: 0; }
   .subbar .next-video {
@@ -98,7 +99,27 @@ a {
     text-align: right;
     opacity: 0; }
     .subbar .next-video .skip-video {
-      cursor: pointer; }
+      cursor: pointer;
+      display: inline-block;
+      line-height: 42px;
+      padding: 0 17px 0 18px;
+      background: #f7f7f7;
+      text-align: center;
+      color: #5A20F7;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-weight: 600; }
+      .subbar .next-video .skip-video .ic-arrow-next::before {
+        font-size: 10px; }
+      .subbar .next-video .skip-video .ic-arrow-next:first-child::before {
+        display: inline-block;
+        margin-right: -3px; }
+    .subbar .next-video .skip-video:hover {
+      background: #5A20F7;
+      color: #f7f7f7; }
+    .subbar .next-video .skip-video:active {
+      background: #501DDE;
+      color: #f9f9f9; }
 
 html:hover .toolbar,
 html:hover .subbar {
