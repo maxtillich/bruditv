@@ -11,4 +11,19 @@ $(function() {
   $(window).resize(function() {
     changeRatio();
   });
+
+  ui = $('.hug');
+  $('.fullscreen-button').click(function(event) {
+    event.preventDefault();
+
+    if (ui.requestFullscreen) {
+      ui.requestFullscreen();
+    } else if (ui.msRequestFullscreen) {
+      ui.msRequestFullscreen();
+    } else if (ui.mozRequestFullScreen) {
+      ui.mozRequestFullScreen();
+    } else if (ui.webkitRequestFullscreen) {
+      ui.webkitRequestFullscreen();
+    }
+  });
 });

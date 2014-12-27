@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <div ng-controller="BrudiPlayerCtrl">
+    <div ng-controller="BrudiPlayerCtrl" class="hug">
       <div class="videoWrapper">
         <iframe class="player" width="560" height="349" ng-src="{{randomURL}}" frameborder="0" scrolling="no" allowfullscreen></iframe>
       </div>
@@ -30,7 +30,9 @@
 
       <ul class="subbar blocks-3">
         <li class="fullscreen">
-          <i class="ic-fullscreen-stroke"></i>
+          <a href="#" title="Fullscreen" class="fullscreen-button">
+            <i class="ic-fullscreen-stroke"></i>
+          </a>
         </li>
         
         <li class="trackinfo">
