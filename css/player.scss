@@ -90,25 +90,24 @@ a {
   transition-timing-function: cubic-bezier(0, 0.7, 0, 1.5);
   color: #fff;
   opacity: 0;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
   overflow: hidden;
 
   >li {
     line-height: 42px;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .fullscreen {
+    width: 130px;
     font-size: 21px;
     opacity: 0;
     line-height: 50px;
   }
 
   .trackinfo {
+    width: calc(100% - 260px);
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -117,6 +116,7 @@ a {
   }
 
   .next-video {
+    width: 130px;
     text-align: right;
     opacity: 0;
 
