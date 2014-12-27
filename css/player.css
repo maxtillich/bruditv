@@ -29,7 +29,7 @@ a {
   height: 0;
   background: #fff;
   box-shadow: 0 1px rgba(0, 0, 0, 0.02);
-  padding: 0;
+  padding: 0 18px;
   font-size: 13px;
   transition-property: all;
   transition-duration: .5s;
@@ -83,10 +83,18 @@ a {
     padding: 0; }
   .subbar .fullscreen {
     width: 130px;
-    font-size: 21px;
+    font-size: 23px;
     opacity: 0;
     padding-left: 18px;
     line-height: 50px; }
+    .subbar .fullscreen .fullscreen-button {
+      cursor: pointer; }
+    .subbar .fullscreen .fullscreen-button:hover {
+      color: #5A20F7; }
+    .subbar .fullscreen .fullscreen-button:active {
+      color: #501DDE; }
+    .subbar .fullscreen .isfullscreen .ic-fullscreen-stroke:before {
+      content: "\e60e"; }
   .subbar .trackinfo {
     width: calc(100% - 260px);
     font-weight: 800;
@@ -121,20 +129,14 @@ a {
       background: #501DDE;
       color: #f9f9f9; }
 
-html:hover .toolbar,
-html:hover .subbar {
+.show-ui {
   height: 42px;
   color: #111;
   opacity: 1; }
-  html:hover .toolbar a,
-  html:hover .subbar a {
+  .show-ui a {
     color: #111; }
-  html:hover .toolbar .trackinfo,
-  html:hover .toolbar .options,
-  html:hover .toolbar .next-video,
-  html:hover .toolbar .fullscreen,
-  html:hover .subbar .trackinfo,
-  html:hover .subbar .options,
-  html:hover .subbar .next-video,
-  html:hover .subbar .fullscreen {
+  .show-ui .trackinfo,
+  .show-ui .options,
+  .show-ui .next-video,
+  .show-ui .fullscreen {
     opacity: 1.0; }

@@ -33,7 +33,7 @@ a {
   height: 0;
   background: #fff;
   box-shadow: 0 1px rgba(0,0,0,0.02);
-  padding: 0;
+  padding: 0 18px;
   font-size: 13px;
   transition-property: all;
   transition-duration: .5s;
@@ -101,10 +101,28 @@ a {
 
   .fullscreen {
     width: 130px;
-    font-size: 21px;
+    font-size: 23px;
     opacity: 0;
     padding-left: 18px;
     line-height: 50px;
+
+    .fullscreen-button {
+      cursor: pointer;
+    }
+
+    .fullscreen-button:hover {
+      color: #5A20F7;
+    }
+
+    .fullscreen-button:active {
+      color: #501DDE;
+    }
+
+    .isfullscreen {
+      .ic-fullscreen-stroke:before {
+        content: "\e60e";
+      }
+    }
   }
 
   .trackinfo {
@@ -155,22 +173,19 @@ a {
   }
 }
 
-html:hover {
-  .toolbar,
-  .subbar {
-    height: 42px;
+.show-ui {
+  height: 42px;
+  color: #111;
+  opacity: 1;
+
+  a {
     color: #111;
-    opacity: 1;
+  }
 
-    a {
-      color: #111;
-    }
-
-    .trackinfo,
-    .options,
-    .next-video,
-    .fullscreen {
-      opacity: 1.0;
-    }
+  .trackinfo,
+  .options,
+  .next-video,
+  .fullscreen {
+    opacity: 1.0;
   }
 }
