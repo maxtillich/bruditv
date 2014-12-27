@@ -1,0 +1,9 @@
+{
+  "firebase": "bruditv",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
