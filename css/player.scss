@@ -31,7 +31,7 @@ a {
   left: 0;
   right: 0;
   height: 0;
-  background: rgba(255,255,255,0.97);
+  background: #fff;
   box-shadow: 0 1px rgba(0,0,0,0.02);
   padding: 0 2%;
   font-size: 13px;
@@ -81,7 +81,7 @@ a {
   left: 0;
   right: 0;
   height: 0;
-  background: rgba(255,255,255,0.97);
+  background: #fff;
   box-shadow: 0 -1px rgba(0,0,0,0.02);
   padding: 0 2%;
   font-size: 13px;
@@ -116,9 +116,13 @@ a {
     opacity: 0;
   }
 
-  .purchase {
+  .next-video {
     text-align: right;
     opacity: 0;
+
+    .skip-video {
+      cursor: pointer;
+    }
   }
 }
 
@@ -135,7 +139,7 @@ html:hover {
 
     .trackinfo,
     .options,
-    .purchase,
+    .next-video,
     .fullscreen {
       opacity: 1.0;
     }

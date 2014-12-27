@@ -25,7 +25,6 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
     $scope.snapshot.forEach(function(snapshot) {
       if (i == rand) {
         randomVideo = snapshot.val();
-        console.log(randomVideo);
 
         $scope.randomTitle = randomVideo.title;
         $scope.randomArtist = randomVideo.artist;
@@ -44,7 +43,7 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
           endTimeSeconds = "";
         }
 
-        $scope.randomURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + randomVideo.ytid + "?version=3;autoplay=1;start=" + startTimeSeconds + ";end=" + endTimeSeconds + "color=white;hl=en_US;enablejsapi=1;rel=0;modestbranding=1;autohide=1;showinfo=0;controls=0;iv_load_policy=3");
+        $scope.randomURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + randomVideo.ytid + "?version=3;autoplay=1;start=" + startTimeSeconds + ";end=" + endTimeSeconds + "color=white;disablekb=1;hl=en_US;enablejsapi=1;rel=0;modestbranding=1;autohide=1;showinfo=0;controls=0;iv_load_policy=3");
         $scope.$apply();
       }
       i++;
@@ -61,4 +60,13 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
   }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
   });
+
+  // SKIP KEYBOARD
+  $scope.keyup = function(keyEvent) {
+    if((keyEvent.which === 39) || (keyEvent.which === 32) || (keyEvent.which === 13) || (keyEvent.which === 78)) {
+      $scope.next();
+    }
+  };
+  
 });
+
