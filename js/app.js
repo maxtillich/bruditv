@@ -16,6 +16,7 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
   var sync = $firebase(ref);
 
   $scope.next = function() {
+    $scope.announcementClass = "newtrack";
     var oldrand = rand || -1;
     var rand = Math.floor(Math.random() * $scope.snapshot.numChildren());
     while(rand == oldrand) { // Damit wir nicht das letzte nochmal haben
@@ -44,7 +45,6 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
         }
 
         $scope.randomURL = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + randomVideo.ytid + "?version=3;autoplay=1;start=" + startTimeSeconds + ";end=" + endTimeSeconds + "color=white;disablekb=1;hl=en_US;enablejsapi=1;rel=0;modestbranding=1;autohide=1;showinfo=0;controls=0;iv_load_policy=3;origin=http://brudi.local");
-        $scope.announcementClass = "newtrack";
         $scope.$apply();
       }
       i++;
