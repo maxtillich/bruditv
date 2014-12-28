@@ -140,3 +140,7 @@ a {
   .show-ui .next-video,
   .show-ui .fullscreen {
     opacity: 1.0; }
+
+/* .moveoveriframe {
+  pointer-events: none;
+} */

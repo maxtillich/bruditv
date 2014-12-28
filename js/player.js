@@ -42,14 +42,12 @@ $(function() {
   // FOCUS HUG FOR ANGULAR KEYUP
   $('.hug').focus();
 
-
-
+  // AUTO HIDE TOOLBARS
   var timer;
-
   $('.ui').addClass('show-ui');
   setTimeout(function() {
     $('.ui').removeClass('show-ui');
-    $('html').on('mousemove', function () {
+    $(window).on('mousemove', function () {
       $('.ui').addClass('show-ui');
       try {
         clearTimeout(timer);
@@ -59,4 +57,8 @@ $(function() {
       }, 1500);
     });
   }, 2700);
+});
+
+$("iframe").contents().find("body").mousemove(function(cursor){
+    console.log("asdad")
 });
