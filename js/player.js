@@ -38,6 +38,11 @@ $(function() {
       }
     }
   });
+  $(window).keyup(function(event) {
+    if(event.which == 27) {
+      $('.fullscreen-button').removeClass('isfullscreen');
+    }
+  });
 
   // FOCUS HUG FOR ANGULAR KEYUP
   $('.hug').focus();
