@@ -141,6 +141,9 @@ a {
   .show-ui .fullscreen {
     opacity: 1.0; }
 
+.hide-cursor {
+  cursor: none; }
+
 /* .moveoveriframe {
   pointer-events: none;
 } */

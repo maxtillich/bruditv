@@ -45,20 +45,20 @@ $(function() {
   // AUTO HIDE TOOLBARS
   var timer;
   $('.ui').addClass('show-ui');
+  $('*').removeClass('hide-cursor');
   setTimeout(function() {
     $('.ui').removeClass('show-ui');
+    $('*').addClass('hide-cursor');
     $(window).on('mousemove', function () {
       $('.ui').addClass('show-ui');
+      $('*').removeClass('hide-cursor');
       try {
         clearTimeout(timer);
       } catch (e) {}
       timer = setTimeout(function () {
         $('.ui').removeClass('show-ui');
+        $('*').addClass('hide-cursor');
       }, 1500);
     });
   }, 2700);
-});
-
-$("iframe").contents().find("body").mousemove(function(cursor){
-    console.log("asdad")
 });

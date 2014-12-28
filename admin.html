@@ -6,38 +6,39 @@
     <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="css/kube.min.css">
+    <link rel="stylesheet" href="css/admin.css">
   </head>
   <body ng-controller="BrudiAdminCtrl">
     <div class="hug">
       <header class="header">
-        <h2>Brudi Admin</h2>
+        <h3>Brudi Admin</h3>
       </header>
 
       <div class="units-row">
         <div class="unit-100">
-          <form ng-submit="addVideo(newYtId, newTitle, newArtist, newStartTime, newEndTime)" class="forms">
+          <form ng-submit="addVideo(newYtId, newTitle, newArtist, newStartTime, newEndTime)" class="forms compose" name="addform">
             <label for="newYtId">
-              YouTube ID
+              YouTube ID<br>
               <input ng-model="newYtId" id="newYtId" placeholder="z.B. fHCAJ4R4yGA" autofocus>
             </label>
 
             <label for="newTitle">
-              Title
+              Title<br>
               <input ng-model="newTitle" id="newTitle">
             </label>
 
             <label for="newArtist">
-              Artist
+              Artist<br>
               <input ng-model="newArtist" id="newArtist">
             </label>
 
             <label for="newStartTime">
-              Start Time
+              Start Time<br>
               <input ng-model="newStartTime" id="newStartTime" placeholder="z.B. 01:13">
             </label>
 
             <label for="newEndTime">
-              End Time
+              End Time<br>
               <input ng-model="newEndTime" id="newEndTime" placeholder="z.B. 01:13">
             </label>
 
@@ -50,11 +51,11 @@
 
       <div class="units-row">
         <div class="unit-100">
-          <ul>
+          <ol class="videos">
             <li ng-repeat="video in videos">
-              YouTube ID: <input ng-model="video.ytid" ng-change="videos.$save(video)">
+              <strong>{{video.title}}</strong> - {{video.artist}}<br>
+              <input ng-model="video.ytid" ng-change="videos.$save(video)">
               <br>
-
               <input ng-model="video.artist" ng-change="videos.$save(video)">
               &nbsp;<input ng-model="video.title" ng-change="videos.$save(video)">
               <br>
@@ -63,7 +64,7 @@
 
               <button ng-click="videos.$remove(video)">X</button>
             </li>
-          </ul>
+          </ol>
         </div>
       </div>
     </div>
