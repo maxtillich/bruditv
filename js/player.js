@@ -61,4 +61,32 @@ $(function() {
       }, 1500);
     });
   }, 2700);
+
+  // SHOW AND HIDE TRACK ANNOUNCEMENT
+  setTimeout(function() {
+    if($('.track-announcement').hasClass('newtrack')) {
+      setTimeout(function() {
+        $('.track-announcement').toggleClass('show-announcement');
+
+        setTimeout(function() {
+          $('.track-announcement').toggleClass('show-announcement');
+          $('.track-announcement').removeClass('newtrack');        
+        }, 5000);
+      }, 2000);
+    }
+  }, 3200);
+
+
+
+  $('.player').contents().on({
+    mousedown: function () {
+      console.log('mouse down triggered');
+    },
+    mouseup: function () {
+      console.log('mouse up triggered');
+    },
+    mousemove: function() {
+      console.log('mouse move triggered');
+    }
+  });
 });

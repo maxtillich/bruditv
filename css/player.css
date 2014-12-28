@@ -129,6 +129,42 @@ a {
       background: #501DDE;
       color: #f9f9f9; }
 
+.track-announcement {
+  position: absolute;
+  z-index: 998;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  line-height: 42px;
+  background: transparent;
+  box-shadow: 0 -1px rgba(0, 0, 0, 0.02);
+  padding: 0;
+  font-size: 13px;
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(0, 0.3, 0, 0);
+  color: rgba(255, 255, 255, 0.97);
+  opacity: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.3)));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px; }
+
+.show-announcement {
+  opacity: 1;
+  height: 42px;
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(0, 0.7, 0, 0); }
+
 .show-ui {
   height: 42px;
   color: #111;
@@ -143,7 +179,3 @@ a {
 
 .hide-cursor {
   cursor: none; }
-
-/* .moveoveriframe {
-  pointer-events: none;
-} */
