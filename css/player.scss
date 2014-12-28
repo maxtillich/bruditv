@@ -186,8 +186,8 @@ a {
   padding: 0;
   font-size: 13px;
   transition-property: all;
-  transition-duration: .2s;
-  transition-timing-function: cubic-bezier(0, 0.3, 0, 0);
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(0, 0.7, 0, 1.2);
   color: rgba(255,255,255,0.97);
   opacity: 0;
   margin: 0;
@@ -207,8 +207,8 @@ a {
   opacity: 1;
   height: 42px;
   transition-property: all;
-  transition-duration: .2s;
-  transition-timing-function: cubic-bezier(0, 0.7, 0, 0);
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(0, 0.3, 0, 0);
 }
 
 .show-ui {

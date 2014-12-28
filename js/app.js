@@ -16,7 +16,17 @@ app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
   var sync = $firebase(ref);
 
   $scope.next = function() {
-    $scope.announcementClass = "newtrack";
+    $scope.callAtTimeout = function(status) {
+      if(status === 'show') {
+        $scope.showAnnouncement = true;
+      }
+      if(status === 'hide') {
+        $scope.showAnnouncement = false;
+      }
+    }
+    $timeout(function(){ $scope.callAtTimeout('show'); }, 3500);
+    $timeout(function(){ $scope.callAtTimeout('hide'); }, 8000);
+
     var oldrand = rand || -1;
     var rand = Math.floor(Math.random() * $scope.snapshot.numChildren());
     while(rand == oldrand) { // Damit wir nicht das letzte nochmal haben

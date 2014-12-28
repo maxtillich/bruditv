@@ -16,7 +16,7 @@
         <iframe class="player" width="560" height="349" ng-src="{{randomURL}}" frameborder="0" scrolling="no" allowfullscreen></iframe>
       </div>
 
-      <div class="track-announcement {{announcementClass}}">
+      <div class="track-announcement" ng-class="{'show-announcement':showAnnouncement==true}">
         <span class="title">{{randomTitle}}</span> - <span>{{randomArtist}}</span>
       </div>
 
