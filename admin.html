@@ -11,9 +11,9 @@
     <script src="js/admin.js"></script>
   </head>
   <body ng-controller="BrudiAdminCtrl">
-    <div class="hug">
+    <div class="hug logged-in" ng-show="user">
       <header class="header">
-        <h3>Brudi Admin</h3>
+        <h3>Brudi Admin {{user}}</h3>
       </header>
 
       <div class="units-row">
@@ -69,6 +69,24 @@
           </ol>
         </div>
       </div>
+    </div>
+
+    <div class="hug logged-out" ng-hide="user">
+      <header class="header">
+        <h3>DANGER ZONE</h3>
+      </header>
+
+      <form class="admin-auth forms compose">
+        <label for="usern">
+          <input ng-model="usercreds.email" name="usern" id="usern" type="email">
+        </label>
+
+        <label for="passw">
+          <input ng-model="usercreds.password" name="passw" id="passw" type="password">
+        </label>
+
+        <button ng-click="authAdmin(usercreds.email, usercreds.password)" class="btn-blue"><i class="ic-arrow-right"></i></button>
+      </form>
     </div>
   </body>
 </html>

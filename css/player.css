@@ -52,8 +52,10 @@ a {
       font-size: inherit;
       margin: 0;
       padding: 0;
-      font-weight: normal;
-      line-height: inherit; }
+      font-weight: 800;
+      line-height: inherit;
+      letter-spacing: 0.6px;
+      text-transform: uppercase; }
   .toolbar .options {
     font-size: 16px;
     opacity: 0;

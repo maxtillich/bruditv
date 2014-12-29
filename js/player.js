@@ -1,4 +1,5 @@
 $(function() {
+
   // FORCE 16:9 VIDEO RATIO
   var changeRatio = function() {
     var wrapperWidth = $('.videoWrapper').width();
@@ -46,6 +47,9 @@ $(function() {
 
   // FOCUS HUG FOR ANGULAR KEYUP
   $('.hug').focus();
+  setInterval(function() {
+    $('.hug').focus();
+  }, 5000);
 
   // AUTO HIDE TOOLBARS
   var timer;
@@ -81,17 +85,4 @@ $(function() {
     }
   }, 3200);
 
-
-
-  $('.player').contents().on({
-    mousedown: function () {
-      console.log('mouse down triggered');
-    },
-    mouseup: function () {
-      console.log('mouse up triggered');
-    },
-    mousemove: function() {
-      console.log('mouse move triggered');
-    }
-  });
 });

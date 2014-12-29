@@ -1,15 +1,39 @@
 var app = angular.module("BrudiTvApp", ["firebase"]);
 
-app.controller("BrudiAdminCtrl", function($scope, $firebase) {
+app.factory("Auth", ["$firebaseAuth", function($firebaseAuth) {
+  var ref = new Firebase("https://bruditv.firebaseio.com/");
+  return $firebaseAuth(ref);
+}]);
+
+app.controller("BrudiAdminCtrl", ["$scope", "Auth", "$firebase", function($scope, Auth, $firebase) {
+  var authref = new Firebase("https://bruditv.firebaseio.com/");
   var ref = new Firebase("https://bruditv.firebaseio.com/videos");
   var sync = $firebase(ref);
   $scope.videos = sync.$asArray();
+
+  $scope.auth = Auth;
+  $scope.user = $scope.auth.$getAuth();
+  console.log($scope.user);
+
+  $scope.authAdmin = function(adminEmail, adminPassword) {
+    authref.authWithPassword({
+      email    : adminEmail,
+      password : adminPassword
+    }, function(error, authData) {
+      alert("auth issue");
+    }, {
+      remember: "sessionOnly";
+      $scope.auth = Auth;
+      $scope.user = $scope.auth.$getAuth();
+      console.log($scope.user);
+    });
+  }
 
   $scope.addVideo = function(ytid, title, artist, starttime, endtime) {
     var dateAdded = Math.floor(new Date().getTime() / 1000);
     $scope.videos.$add({ytid: ytid, title: title, artist: artist, starttime: starttime, endtime: endtime, dateadded: dateAdded});
   }
-});
+}]);
 
 app.controller("BrudiPlayerCtrl", function($scope, $firebase, $sce, $timeout) {
   var ref = new Firebase("https://bruditv.firebaseio.com/videos");
