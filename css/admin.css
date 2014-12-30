@@ -1,3 +1,6 @@
+html {
+  -webkit-font-smoothing: antialiased; }
+
 .hug {
   width: 50%;
   max-width: 1200px;

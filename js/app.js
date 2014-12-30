@@ -13,19 +13,19 @@ app.controller("BrudiAdminCtrl", ["$scope", "Auth", "$firebase", function($scope
 
   $scope.auth = Auth;
   $scope.user = $scope.auth.$getAuth();
-  console.log($scope.user);
 
   $scope.authAdmin = function(adminEmail, adminPassword) {
     authref.authWithPassword({
       email    : adminEmail,
       password : adminPassword
     }, function(error, authData) {
-      alert("auth issue");
-    }, {
-      remember: "sessionOnly";
-      $scope.auth = Auth;
-      $scope.user = $scope.auth.$getAuth();
-      console.log($scope.user);
+      if(error) {
+        alert("auth issue");
+      } else {
+        $scope.auth = Auth;
+        $scope.user = $scope.auth.$getAuth();
+        $scope.$apply();
+      }
     });
   }
 

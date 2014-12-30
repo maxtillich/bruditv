@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="css/admin.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/admin.js"></script>
+    <link rel="stylesheet" href="css/iconfont/iconfont.css">
   </head>
   <body ng-controller="BrudiAdminCtrl">
     <div class="hug logged-in" ng-show="user">
       <header class="header">
-        <h3>Brudi Admin {{user}}</h3>
+        <h3>Brudi Admin</h3>
       </header>
 
       <div class="units-row">
@@ -73,7 +74,7 @@
 
     <div class="hug logged-out" ng-hide="user">
       <header class="header">
-        <h3>DANGER ZONE</h3>
+        <h3>Danger Zone</h3>
       </header>
 
       <form class="admin-auth forms compose">
