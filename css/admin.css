@@ -7,6 +7,10 @@ html {
   margin: 0 auto;
   padding: 32px 0; }
 
+.compose .optional {
+  color: #ccc;
+  font-weight: 300;
+  float: right; }
 .compose input {
   height: 46px;
   padding: 0 10px;
