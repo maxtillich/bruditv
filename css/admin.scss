@@ -10,6 +10,11 @@ html {
 }
 
 .compose {
+  .optional {
+    color: #e0e0e0;
+    font-weight: 300;
+  }
+
   input {
     height: 46px;
     padding: 0 10px;

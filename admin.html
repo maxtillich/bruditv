@@ -27,22 +27,22 @@
 
             <label for="newTitle">
               Title<br>
-              <input ng-model="newTitle" id="newTitle">
+              <input ng-model="newTitle" id="newTitle" required>
             </label>
 
             <label for="newArtist">
               Artist<br>
-              <input ng-model="newArtist" id="newArtist">
+              <input ng-model="newArtist" id="newArtist" required>
             </label>
 
             <label for="newStartTime">
-              Start Time<br>
+              Start Time <span class="optional">Optional</span><br>
               <input ng-model="newStartTime" id="newStartTime" placeholder="z.B. 01:13">
             </label>
 
             <label for="newEndTime">
               End Time<br>
-              <input ng-model="newEndTime" id="newEndTime" placeholder="z.B. 01:13">
+              <input ng-model="newEndTime" id="newEndTime" placeholder="z.B. 01:13" required>
             </label>
 
             <p>

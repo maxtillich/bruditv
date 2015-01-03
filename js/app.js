@@ -31,6 +31,9 @@ app.controller("BrudiAdminCtrl", ["$scope", "Auth", "$firebase", function($scope
 
   $scope.addVideo = function(ytid, title, artist, starttime, endtime) {
     var dateAdded = Math.floor(new Date().getTime() / 1000);
+    if(starttime === "") {
+      starttime = "00:01";
+    }
     $scope.videos.$add({ytid: ytid, title: title, artist: artist, starttime: starttime, endtime: endtime, dateadded: dateAdded});
   }
 }]);
